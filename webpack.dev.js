@@ -34,12 +34,12 @@ module.exports = {
                         options: {
                             postcssOptions: {
                                 plugins: [
-                                    require('autoprefixer'),
-                                    require('precss')
+                                    require('autoprefixer')
                                 ]
                             }
                         }
-                    }
+                    },
+                    "sass-loader"
                 ]
             },
             {

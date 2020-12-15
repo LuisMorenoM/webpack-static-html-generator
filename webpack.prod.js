@@ -9,7 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const buildPath = path.resolve(__dirname, 'dist')
 
 let minifyHtmlOptions = {
-    collapseWhitespace: false, // to collapse set to true.
+    collapseWhitespace: true, // to collapse set to true.
     removeComments: true,
     removeRedundantAttributes: true,
     removeScriptTypeAttributes: true,
@@ -58,12 +58,12 @@ module.exports = {
                         options: {
                             postcssOptions: {
                                 plugins: [
-                                    require('autoprefixer'),
-                                    require('precss')
+                                    require('autoprefixer')
                                 ]
                             }
                         }
-                    }
+                    },
+                    "sass-loader"
                 ]
             },
             // TO IMPORT WITH JS:
@@ -117,14 +117,14 @@ module.exports = {
     
     // https://webpack.js.org/configuration/optimization/
     // if you want all minified, uncomment this:
-    // optimization: {
-    //   minimize: true,
-    //   minimizer: [
-    //     new TerserPlugin(),
-    //     new CssMinimizerPlugin()
-    //   ]
-    // }
     optimization: {
-        minimize: false
+      minimize: true,
+      minimizer: [
+        new TerserPlugin(),
+        new CssMinimizerPlugin()
+      ]
     }
+    // optimization: {
+    //     minimize: false
+    // }
 }
