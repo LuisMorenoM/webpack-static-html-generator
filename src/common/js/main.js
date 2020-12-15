@@ -1,1 +1,1 @@
-require('normalize.css/normalize.css');
+console.log("main here")

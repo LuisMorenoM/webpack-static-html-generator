@@ -1,8 +1,14 @@
 
+@import "../../../node_modules/normalize.css/normalize.css";
+
 /**
- * === CUSTOM CSS ===
+ * === MAIN CSS ===
  */
 
 body {
+    color: red;
+}
+
+h1 {
     color: red;
 }

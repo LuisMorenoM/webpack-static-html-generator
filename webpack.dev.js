@@ -5,7 +5,7 @@ module.exports = {
     entry: {
         index: './src/pages/index/index.js',
         // one: { import: './src/pages/one/one.js', filename: '[name]/[name].[fullhash:20].js'} // folder structure
-        one: { import: './src/pages/one/one.js' }
+        one: { import: ['./src/pages/one/one.js', './src/pages/one/one.scss'] }
     },
     
     // https://webpack.js.org/configuration/dev-server/
