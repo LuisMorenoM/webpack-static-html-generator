@@ -42,6 +42,21 @@ module.exports = {
                     }
                 ]
             },
+            {
+                // Load all images as base64 encoding if they are smaller than 8192 bytes
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            name: 'static/[name].[hash].[ext]',
+                            esModule: false,
+                            limit: 8192,
+                            publicPath: '/',
+                        }
+                    }
+                ]
+            }
             // TO IMPORT WITH JS:
             // {
             //     test: /\.html$/i,

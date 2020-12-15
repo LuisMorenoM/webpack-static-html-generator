@@ -81,9 +81,10 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            name: '[name].[fullhash:20].[ext]',
+                            name: 'static/[name].[hash].[ext]',
                             esModule: false,
-                            limit: 8192
+                            limit: 8192,
+                            publicPath: '/',
                         }
                     }
                 ]
