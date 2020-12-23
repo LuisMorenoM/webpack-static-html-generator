@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     // https://webpack.js.org/concepts/entry-points/#multi-page-application
     entry: {
-        index: './src/pages/index/index.js',
+        index: { import: ['./src/pages/index/index.js', './src/pages/index/index.scss'] },
         // one: { import: './src/pages/one/one.js', filename: '[name]/[name].[fullhash:20].js'} // folder structure
         one: { import: ['./src/pages/one/one.js', './src/pages/one/one.scss'] }
     },
